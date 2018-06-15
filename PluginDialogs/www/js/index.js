@@ -56,4 +56,22 @@ var app = {
             ['Sim','Não']          // ButtoLabels
         );
     },
+
+    prompt: function(){
+
+        function onPrompt(results) {
+            var results = '';
+            alert('Usuario clicou no botão ' + 
+                results.buttonIndex +
+                " e digitou " + results.input1);
+        }
+
+        navigator.notification.prompt(
+            'Informe seu nome',  // Message
+            onPrompt,            // Callback to invoke
+            'Registro',          // Title
+            ['Ok','Cancelar'],   // ButtonLabels
+            'Seu nome'           // DefaultText
+        );
+    }
 };
