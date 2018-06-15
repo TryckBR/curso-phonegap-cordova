@@ -61,7 +61,7 @@ var app = {
 
         function onPrompt(results) {
             var results = '';
-            alert('Usuario clicou no botão ' + 
+            alert("Usuario clicou no botão " + 
                 results.buttonIndex +
                 " e digitou " + results.input1);
         }
@@ -73,6 +73,10 @@ var app = {
             ['Ok','Cancelar'],   // ButtonLabels
             'Seu nome'           // DefaultText
         );
+    },
+
+    beep: function(){
+        navigator.notification.beep(10);
     }
 };
 
