@@ -77,6 +77,10 @@ var app = {
 
     beep: function(){
         navigator.notification.beep(10);
+    },
+
+    signo: function(){
+        alert("Seu signo é gayriano! 100%");
     }
 };
 
