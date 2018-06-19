@@ -63,5 +63,40 @@ var app = {
         var fields = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
 
         navigator.contacts.find(fields, onSuccess, onError, options);
+    },
+
+    createContact: function(){
+
+        function onSuccess(contact) {
+            alert("Save Success");
+        }
+
+        function onError(contactError) {
+            alert("Error = " + contactError.code);
+        }
+
+        // create a new contact object
+        var contact = navigator.contacts.create();
+        contact.displayName = "AAAA";
+        contact.nickname = "Plumber";     // Specify both to suport
+
+        // Populate some fields
+        var name = new ContactName();
+        nome.giveName = "Jane";
+        name.familyName = "Doe";
+        contact.name = name;
+
+        // Save to device
+        contact.save(onSuccess, onError);
+    },
+
+    pickContact: function(){
+
+        navigator.contacts.pickContact(funtion(contact){
+            alert('The following contact has ben selected:'
+                + JSON.stringify(contact));
+        },function(err){
+            alert('Error: ' + err);
+        });
     }
 };
